@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords"
+        content="Athmos Unity Unity3d Ambient Sound Packs Asset Store Assetstore" />
+    <meta name="description"
+        content="Athmos provides the unity engine with specific athmospheric abmient sound packs." />
+    <link href="css/icons.css" rel="stylesheet" />
+    <link rel="icon" href="Images/Athmos Abmient Sound Packs For Unity Favicon.svg" />
+    <title>Athmos</title>
+    <noscript>
+      <style>
+        body {
+          opacity: 1 !important;
+        }
+      </style>
+    </noscript>
+    <style>
+      @keyframes blink {
+        0% {
+          transform: translateY(0px);
+        }
+        95% {
+          transform: translateY(0px);
+        }
+        100% {
+          transform: translateY(-3px);
+        }
+      }
+
+      @keyframes downer {
+        0% {
+          transform: translateX(-50%) translateY(0px);
+          opacity: 0;
+        }
+        25% {
+          transform: translateX(-50%) translateY(0px);
+          opacity: 0;
+        }
+        30% {
+          opacity: 1;
+        }
+        45% {
+          opacity: 1;
+        }
+        50% {
+          transform: translateX(-50%) translateY(60px);
+          opacity: 0;
+        }
+      }
+
+      html {
+        background-color: black;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      *:focus {
+        outline: none;
+      }
+
+      body {
+        opacity: 0;
+        transition: 10s ease-out;
+        background-color: rgb(8, 8, 8);
+        color: white;
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        line-height: 30px;
+      }
+
+      @media only screen and (max-width: 800px) {
+        body {
+          font-size: 15px;
+          line-height: 25px;
+        }
+      }
+
+      section {
+        position: relative;
+        padding: 100px 20%;
+      }
+
+      @media only screen and (max-width: 800px) {
+        section {
+          padding: 50px 2%;
+        }
+      }
+
+      section:nth-child(1) {
+        padding: 0;
+      }
+
+      b {
+        color: white;
+      }
+
+      p {
+        color: rgb(167 167 167);
+      }
+
+      h1 {
+        font-weight: normal;
+        font-size: 28px;
+        line-height: 35px;
+        margin-bottom: 75px;
+        margin-top: 0;
+      }
+
+      h2 {
+        font-weight: normal;
+        font-size: 28px;
+        line-height: 35px;
+        text-transform: uppercase;
+      }
+
+      @media only screen and (max-width: 800px) {
+        h1 {
+          font-size: 20px;
+          line-height: 30px;
+        }
+      }
+
+      a {
+        text-decoration: none;
+        color: rgb(0, 132, 255);
+        transition: 0.3s;
+      }
+
+      a:hover {
+        color: rgb(0, 78, 151);
+      }
+
+      .title {
+        position: absolute;
+        top: 65%;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        width: 100%;
+        pointer-events: none;
+        font-size: 19px;
+        letter-spacing: 6px;
+        opacity: 0;
+        transition: 3s ease-out;
+        text-transform: uppercase;
+      }
+
+      @media only screen and (max-width: 800px) {
+        .title {
+          font-size: 10px;
+          letter-spacing: 4px;
+        }
+      }
+
+      @media only screen and (max-width: 375px) {
+        .title {
+          display: none;
+        }
+      }
+
+      .noselect {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      .blinker {
+        animation: blink 3s linear infinite;
+      }
+
+      .imgwrap {
+        border: 1px solid #ffffff2e;
+        padding: 15px;
+        padding-bottom: 10px;
+        border-radius: 10px;
+      }
+
+      .txtwrap {
+        padding: 5% 25px;
+        padding-top: 0;
+      }
+
+      .imgwrap img {
+        border-radius: 10px;
+        width: 100%;
+      }
+
+      .row {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+      }
+
+      .column {
+        -ms-flex: 25%;
+        flex: 25%;
+        max-width: 25%;
+        padding: 0;
+      }
+
+      .column img {
+        margin: 0;
+        vertical-align: middle;
+        width: 100%;
+      }
+
+      @media screen and (max-width: 800px) {
+        .column {
+          -ms-flex: 50%;
+          flex: 50%;
+          max-width: 50%;
+        }
+      }
+
+      @media screen and (max-width: 600px) {
+        .column {
+          -ms-flex: 100%;
+          flex: 100%;
+          max-width: 100%;
+        }
+      }
+
+      .gi {
+        position: relative;
+        cursor: pointer;
+        transition: 0.3s;
+        border: 2px solid black;
+      }
+
+      .gi:hover,
+      .go:focus {
+        filter: brightness(120%);
+        transform: translateX(-3px) translateY(-3px);
+        z-index: 1;
+      }
+
+      footer {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 100px 10%;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+      }
+
+      footer img {
+        width: 150px;
+        height: 150px;
+        margin-right: 100px;
+      }
+
+      @media only screen and (max-width: 800px) {
+        footer img {
+          width: 100px;
+          height: 100px;
+          margin-right: 0px;
+        }
+      }
+
+      @media only screen and (max-width: 600px) {
+        footer img {
+          width: 75px;
+          height: 75px;
+          margin-right: 15px;
+        }
+      }
+
+      .socials {
+        display: flex;
+      }
+
+      .social {
+        padding: 30px;
+        font-size: 32px;
+        color: rgb(255, 255, 255);
+      }
+
+      .social:hover {
+        color: rgb(163, 163, 163);
+      }
+
+      @media only screen and (max-width: 800px) {
+        .social {
+          font-size: 25px;
+          padding: 20px;
+        }
+      }
+
+      @media only screen and (max-width: 600px) {
+        .social {
+          font-size: 20px;
+          padding: 10px;
+        }
+      }
+
+      .nocookie {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        width: 100%;
+        bottom: 10px;
+        color:rgb(59, 59, 59);
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 20;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.9);
+      }
+
+      .modal-content {
+        max-height: 100vh;
+        max-width: 90vw;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        transition: 1s;
+        opacity: 0;
+        filter: brightness(110%) contrast(110%);
+      }
+
+      #caption {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+        text-align: center;
+        color: #ccc;
+        padding: 10px 0;
+        height: 150px;
+      }
+
+      .modalbutton {
+        cursor: pointer;
+        background-color: transparent;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 45px;
+        color: white;
+        font-size: 30px;
+      }
+
+      .modalbutton:hover,
+      .modalbutton:focus {
+        color: rgb(145, 145, 145);
+      }
+
+      .modalbutton.left {
+        left: 0px;
+      }
+
+      .modalbutton.right {
+        right: 0px;
+      }
+
+      .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: rgb(145, 145, 145);
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      @media only screen and (max-width: 700px) {
+        .modal-content {
+          width: 100%;
+        }
+      }
+
+      .down {
+        position: fixed;
+        bottom: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 50px;
+        pointer-events: none;
+        animation: downer 10s linear;
+        opacity: 0;
+      }
+
+      .mailboxcontainer {
+        position: relative;
+      }
+
+      .mailbox {
+        text-align: center;
+      }
+
+      .mailboxwrap {
+        padding: 5% 25px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+      }
+
+      .mailboxstate {
+        display: none;
+        opacity: 0;
+        position: absolute;
+        top: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 320px;
+        margin-top: 25px;
+        text-align: center;
+        transition: 0.3s;
+      }
+
+      .mailfield {
+        height: 50px;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        padding: 10px 25px;
+        min-width: 350px;
+        background-color: transparent;
+        border: 1px solid rgb(255, 255, 255);
+        color: white;
+      }
+
+      .mailfield:hover {
+        border-color: rgb(172, 172, 172);
+      }
+
+      input.mailfield:-webkit-autofill {
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: white !important;
+      }
+
+      .mailsubmit {
+        cursor: pointer;
+        height: 50px;
+        border: none;
+        border-radius: 5px;
+        font-weight: bold;
+        padding: 10px 50px;
+        background-color: white;
+        transition: 0.3s;
+        margin: 10px;
+      }
+
+      .mailsubmit:hover {
+        background-color: rgb(177, 177, 177);
+      }
+
+      .sidebyside {
+        align-items: center;
+        padding-top: 0px;
+        padding-bottom: 100px;
+      }
+
+      @media only screen and (max-width: 1700px) {
+        .mwl {
+          display: none;
+        }
+      }
+
+      .fade {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to top, black 1%, transparent 20%);
+      }
+
+
+      /*main nav*/
+
+      .mainnav {
+        position: fixed;
+        width: 100%;
+        height: 75px;
+        background-color: #141414ed;
+        display: flex;
+        z-index: 10;
+        justify-content: end;
+        border-bottom: 1px solid rgb(66, 66, 66);
+        top: 0;
+        font-size: 20px;
+      }
+
+      .navhome {
+        width: 75px;
+        padding: 10px;
+        cursor: pointer;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      .navhome:hover {
+        filter: brightness(80%);
+      }
+
+      .navitem {
+        padding: 25px;
+        align-self: center;
+        color: white;
+        cursor: pointer;
+        font-size: 15px;
+        margin: 0px 15px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+
+      .navitem:hover {
+        color: gray;
+      }
+
+      a.navitem  {
+        color:white;
+      }
+
+      .main-section, .nav {
+        margin-top: 75px;            
+      }
+
+      @media only screen and (max-width: 800px) {
+        .navitem {
+          font-size: 12px;
+          letter-spacing: 0px;
+          margin: 0px 0px;
+          padding: 25px 10px;
+        }
+      }
+
+      /*---*/
+
+      .assetstorebutton {
+        position: absolute;
+        top: 66%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 20px;
+        font-weight: bold;
+        background: white;
+        border: none;
+        border-radius: 5px;
+        padding: 20px 40px;
+        z-index: 5;
+        cursor: pointer;
+        color:black;
+      }
+
+      .assetstorebutton:hover {
+        color:black;
+        filter:invert(1);
+      }
+
+      @media only screen and (max-width: 800px) {
+        
+        .assetstorebutton {
+          top: 78%;
+          font-size: 14px;
+          padding: 15px 10px;
+        }
+
+      }
+
+      /*---*/
+
+      .mainparagraph {
+        position: absolute;
+        top: 66%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 36px;
+        text-transform: uppercase;
+        font-weight: lighter;
+        -background: white;
+        border: none;
+        border-radius: 5px;
+        padding: 20px 40px;
+        z-index: 5;
+        cursor: pointer;
+        color:white;
+      }
+
+      .mainparagraph:hover {
+        color:black;
+        filter:invert(1);
+      }
+
+      @media only screen and (max-width: 800px) {
+        
+        .mainparagraph {
+          top: 78%;
+          font-size: 14px;
+          padding: 15px 10px;
+        }
+
+      }
+
+      /*---*/
+
+      .soundbar {
+        position: absolute;
+        top: 69%;
+        left: 50%;
+        width: 596px;
+        height: 124px;
+        transform: translateX(-50%);
+        background-image: url("Images/Athmos Ambient Sound Packs For Unity Sound Bar Animated.gif");
+        border: none;
+        padding: 20px 40px;
+        z-index: 5;
+        cursor: pointer;
+      }
+
+      @media only screen and (max-width: 800px) {
+        
+        .soundbar {
+          top: 78%;
+          padding: 15px 10px;
+        }
+
+      }
+
+    </style>
+    <script type="text/javascript" src="https://tiiny.host/ad-script.js"></script><script defer data-domain="magenta-jessie-50.tiiny.site" src="https://analytics.tiiny.site/js/plausible.js"></script></head>
+
+  </head>
+  <body>
+
+    <div class="mainnav">
+      <a class="navitem navhome" href="#section1"></i>Home</a>
+      <a class="navitem" href="#section1-2">Packs</a>
+      <a class="navitem" href="#section2">Features</a>
+      <a class="navitem" href="docs.html">Documentation</a>
+      <a class="navitem" href="#section3">Contact</a>
+    </div>
+
+    <section style="background-color: black; padding: 0;" id="section1">
+      <img src="Images/Athmos Abmient Sound Packs For Unity Thumbnail.png" style="width: 100%" draggable="false"></img>
+      <!--<h1 class="title noselect"><b>next gen terrain editor</b> for unity</h1>-->
+      <div class="mainparagraph noselect">Sound Design</div> 
+      <!--<a class="assetstorebutton noselect" href="https://assetstore.unity.com/packages/slug/207568">Unity Asset Store</a>-->
+      <a class="soundbar noselect" src="Images/Athmos Abmient Sound Packs For Unity Sound Bar Animated.gif"></a>
+      <div class="fade"></div>
+    </section>
+
+    <!---athmospheres-->
+    <section style="background-color: black;" id="section1-2">
+      <div class="txtwrap">
+        <h1>Hear, hear, welcome to Athmos.</h1>
+        <p>The consept behind Athmos is to provide unity pecific athmospheric sound packages, striking a balance between quality and usability.</p>
+        <p>Each package evolves around a specific athmosphere containing modular sound pieces that flow togheter and allow you to compose rich athmospheric environments.</p>
+      </div>
+      <div class="imgwrap" style="position:relative; width: 100%; height: 0; padding-bottom: 56.25%;">
+        <iframe style="position: absolute; top: 15px; left: 15px; width: calc( 100% - 30px); height: calc( 100% - 30px); border: none;" src=""></iframe>
+      </div>
+    </section>
+
+    <!---what?-->
+    <section id="section2">
+      <div class="txtwrap">
+        <h1>Athmospheres</h1>
+        <p>The consept behind Athmos is to provide unity pecific athmospheric sound packages, striking a balance between quality and usability.</p>
+        <p>Each package evolves around a specific athmosphere containing modular sound pieces that flow togheter and allow you to compose rich athmospheric environments.</p>
+      </div>
+    </section>
+
+    <!---balancing quality and usability-->
+    <section style="background-color: black;">
+      <div class="txtwrap">
+      <h1>Balancing Quality & Usability</h1>
+      <p>The consept behind Athmos is to provide unity pecific athmospheric sound packages, striking a balance between quality and usability.</p>
+      <p>Each package evolves around a specific athmosphere containing modular sound pieces that flow togheter and allow you to compose rich athmospheric environments.</p>
+    </div>
+  </section>
+
+    <!---storytelling-->
+    <section>
+      <div class="txtwrap">
+        <h1>Storytelling</h1>
+        <p>The consept behind Athmos is to provide unity pecific athmospheric sound packages, striking a balance between quality and usability.</p>
+        <p>Each package evolves around a specific athmosphere containing modular sound pieces that flow togheter and allow you to compose rich athmospheric environments.</p>
+      </div>
+    </section>
+
+    <!---combine sounds-->
+    <!--<section style="background-color: black;">
+      <div class="txtwrap">
+        <h1>Blend Modes</h1>
+        <p>Roads should probably make the height go towards the spline at all times. The mountains on the other hand should most likely punch through the heightmap and craters should probably only lower the height of your terrain.</p>
+        <p>This logic is handled through blend modes and we have 5 modes to choose from.</p>
+        <ul>
+          <li>Blend: moves the height towards the target height</li>
+          <li>Max: the maximum height wins</li>
+          <li>Min: the minimum height wins</li>
+          <li>Add: adds height</li>
+          <li>Sub: subtracts height</li>
+        </ul>
+      </div>
+      <div class="imgwrap">
+        <img class="gi noselect" src="Images/Atlas Next Gen Terrain Editor For Unity Section 5.jpg" draggable="false" />
+      </div>
+    </section>-->
+
+    <!---harmony-->
+    <section>
+      <div class="txtwrap">
+        <h1>Harmony</h1>
+        <p>The consept behind Athmos is to provide unity pecific athmospheric sound packages, striking a balance between quality and usability.</p>
+        <p>Each package evolves around a specific athmosphere containing modular sound pieces that flow togheter and allow you to compose rich athmospheric environments.</p>
+      </div>
+    </section>
+
+    <!--modulation-->
+    <section style="background-color: black;">
+      <div class="txtwrap">
+        <h1>Modulation</h1>
+        <p>The consept behind Athmos is to provide unity pecific athmospheric sound packages, striking a balance between quality and usability.</p>
+        <p>Each package evolves around a specific athmosphere containing modular sound pieces that flow togheter and allow you to compose rich athmospheric environments.</p>
+      </div>
+    </section>
+
+    <!--stamps as prefabs-->
+    <!--<section>
+      <div class="txtwrap">
+        <h1>Stamps as Prefabs</h1>
+        <p>Stamps in Atlas are regular GameObjects and as you would expect you can drag them to your project panel and turn them into a prefab.</p>
+        <p>This allows you to <b>structure</b> the way your level is built; you can group stamps, combine stamps with other prefabs like buildings or lakes and especially <b>reuse</b> the things you build throughout your project.</p>
+      </div>
+      <div class="imgwrap">
+        <img class="gi noselect" src="Images/Atlas Next Gen Terrain Editor For Unity Section 8.jpg" draggable="false" />
+      </div>
+    </section>-->
+
+    <!--splines-->
+    <!--<section style="background-color: black;">
+      <div class="txtwrap">
+        <h1>Splines</h1>
+        <p>Atlas would not be complete without spline support. The spline stamp offers the same functionality as regular stamps, the only difference is that the stamp will now be orientated as a spline instead of a square.</p>
+        <p>Consider using spline stamps to build road networks, rivers, ridges, coast lines, or cliffs. It's all possible and can be very powerful when used correctly.</p>
+      </div>
+      <div class="imgwrap">
+        <img class="gi noselect" src="Images/Atlas Next Gen Terrain Editor For Unity Section 9.jpg" draggable="false" />
+      </div>
+    </section>-->
+
+    <!--spline to mesh-->
+    <!--<section>
+      <div class="txtwrap">
+        <h1>Spline to Mesh</h1>
+        <p>Atlas can generate a mesh from your spline, use this to create your road meshes and/or river meshes.</p>
+        <p>The settings with which you export the mesh can be customized separately; for rivers, you may want your mesh to be a little wider than the stamp itself whereas roads might need a small height offset or other tiling values.</p>
+      </div>
+      <div class="imgwrap">
+        <img class="gi noselect" src="Images/Atlas Next Gen Terrain Editor For Unity Section 10.jpg" draggable="false" />
+      </div>
+    </section>-->
+
+    <!--apply to unity terrain-->
+    <!--<section style="background-color: black;">
+      <div class="txtwrap">
+        <h1>Apply to Unity Terrain</h1>
+        <p>Atlas applies straight onto Unity terrain, each terrain will render at full resolution. You can use as many terrains as you want and they don't need to share the same settings. Atlas will automatically render <b>seamlessly</b> when your terrain is placed side by side, there's no stitching required.</p>
+      </div>
+      <div class="imgwrap">
+        <img class="gi noselect" src="Images/Atlas Next Gen Terrain Editor For Unity Section 11.jpg" draggable="false" />
+      </div>
+    </section>-->
+
+    <!--export textures-->
+    <!--<section>
+      <div class="txtwrap">
+        <h1>Exporting textures</h1>
+        <p>To make Atlas ready for the future it provides you with extra textures you can export for more advanced terrain solutions.</p>
+        <ul>
+          <li>Heightmap (32bit)</li>
+          <li>16 splatmaps</li>
+          <li>global color map</li>
+          <li>global normal map</li>
+        </ul>
+        <p>These should provide enough information to articulate pretty much any terrain that is heightmap based.</p>
+        <p>While global color map can give huge improvements of the uniqueness your terrain can also  express to a global normal map that will make your terrain look sharp and crisp from far away.</p>
+        <p>Atlas also provides up to 16 splatmaps if your terrain shader supports it.</p>
+      </div>
+      <div class="imgwrap">
+        <img class="gi noselect" src="Images/Atlas Next Gen Terrain Editor For Unity Section 12.jpg" draggable="false" />
+      </div>
+    </section>-->
+
+    <!--scattering-->
+    <!--<section style="background-color: black;">
+      <div class="txtwrap">
+        <h1>Scattering</h1>
+        <p>Atlas comes with basic scattering system in which each terrain contains a list of <b>scatter rules.</b></p>
+        <p>Each scatter rule can be a biome like palm trees on a beach or a dense pine forest and can be filtered using a target splatmap, range sliders for height and slope and an ignore tag.</p>
+        <p>Scattering is <b>'hierarchy'</b> based, which means you can first scatter a bunch of big trees, those big trees can then scatter smaller trees and so on, this works a bit more like nature in real life compared to just noise based scattering.</p>
+        <p>Details such as tiny rocks and billboard grass can also be scattered via a density value. All scattered objects can <b>cull</b> each other so you don't have overlaps.</p>
+        <p>Scattering is also <b>non invasive</b>, which means that you can manually place your special trees without the scattering system removing them whenever it scatters again.</p>
+      </div>
+      <div class="imgwrap">
+        <img class="gi noselect" src="Images/Atlas Next Gen Terrain Editor For Unity Section 13.jpg" draggable="false" />
+      </div>
+    </section>-->
+
+    <!---editor performance-->
+    <!--<section>
+      <div class="txtwrap">
+        <h1>Adaptive Performance</h1>
+        <p>Atlas renders using a fixed resolution, which means that regardless of the size of your terrain, your <b>performance will stay the same</b>.</p>
+        <p>The preview box is split in 2 parts, on one side you have your total preview area which shows your whole terrain at a lower resolution and on the other side you have a smaller square which renders at full resolution.</p>
+        <p>Drag the full resolution square around to get a glimpse of what the terrain will look like.</p>
+      </div>
+      <div class="imgwrap">
+        <img class="gi noselect" src="Images/Atlas Next Gen Terrain Editor For Unity Section 4.jpg" draggable="false" />
+      </div>
+    </section>-->
+
+    <!--quality-->
+    <section>
+      <div class="txtwrap">
+        <h1>Quality</h1>
+        <p>The consept behind Athmos is to provide unity pecific athmospheric sound packages, striking a balance between quality and usability.</p>
+        <p>Each package evolves around a specific athmosphere containing modular sound pieces that flow togheter and allow you to compose rich athmospheric environments.</p>
+      </div>
+    </section>
+
+    <!--usability-->
+    <section style="background-color: black;">
+      <div class="txtwrap">
+        <h1>Usability</h1>
+        <p>The consept behind Athmos is to provide unity pecific athmospheric sound packages, striking a balance between quality and usability.</p>
+        <p>Each package evolves around a specific athmosphere containing modular sound pieces that flow togheter and allow you to compose rich athmospheric environments.</p>
+      </div>
+    </section>
+
+    <!--roadmap-->
+    <section>
+      <div class="txtwrap">
+        <h1>Roadmap</h1>
+        <p>The consept behind Athmos is to provide unity pecific athmospheric sound packages, striking a balance between quality and usability.</p>
+        <p>Each package evolves around a specific athmosphere containing modular sound pieces that flow togheter and allow you to compose rich athmospheric environments.</p>
+      </div>
+    </section>
+
+    <!--consult-->
+    <section style="background-color: #000000;filter: invert(1);">
+     
+      <!--<img class="noselect mwl" src="Images/Made with love.png" draggable="false" style="border: none;
+      border: none;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%) scale(0.75) translateX(-200px);
+      "/>-->
+      
+      <h2 style="text-align: center; padding-bottom: 50px;">
+        <i class="fas fa-thumbtack blinker" style="margin-right: 10px; display: inline-block"></i>
+        <b class="blinker" style="margin-right: 10px; display: inline-block; animation-delay: 0.1s">discussion</b>
+        <div class="blinker" style="margin-right: 10px; display: inline-block; animation-delay: 0.2s">on</div>
+        <a
+          class="blinker"
+          style="margin-right: 10px; display: inline-block; animation-delay: 0.3s"
+          href="https://discord.gg/ansDwAGvcE"
+          target="_blank"
+          >discord</a
+        >
+      </h2>
+
+      <!--<div class="mailboxwrap">
+        <p style="text-align: center; margin-bottom: 30px">
+          <i class="fas fa-envelope" style="margin-right: 15px; color: white"></i>Subscribe to our newsletter for updates and news!
+        </p>
+        <div class="mailboxcontainer">
+          <div id="mailboxinput" class="mailbox">
+            <input id="mail" type="email" class="mailfield" name="email" autocomplete="on" width="0" required />
+            <input id="submit" type="button" class="mailsubmit" value="Notify me" />
+          </div>
+          <div id="mailboxerror" class="mailboxstate">
+            <b id="errortext" style="text-align: inherit; color: rgb(255, 0, 34)"></b>
+          </div>
+          <div id="mailboxsucces" class="mailboxstate">
+            <b style="text-align: inherit">You got it<i class="fas fa-laugh-beam" style="margin-left: 15px"></i></b>
+          </div>
+        </div>
+      </div>-->
+
+    </section>
+    
+    <!--gallery-->
+    <!--<section id="section3">
+      <div class="row noselect">
+        <div class="column">
+          <img
+            class="gi"
+            src="Images/Gallery/Atlas Next Gen Terrain Editor For Unity Gallery Image 1.jpg"
+            draggable="false"
+          />
+          <img
+            class="gi"
+            src="Images/Gallery/Atlas Next Gen Terrain Editor For Unity Gallery Image 2.jpg"
+            draggable="false"
+          />
+          <img
+            class="gi"
+            src="Images/Gallery/Atlas Next Gen Terrain Editor For Unity Gallery Image 3.jpg"
+            draggable="false"
+          />
+          <img
+            class="gi"
+            src="Images/Gallery/Atlas Next Gen Terrain Editor For Unity Gallery Image 4.jpg"
+            draggable="false"
+          />
+          <img
+            class="gi"
+            src="Images/Gallery/Atlas Next Gen Terrain Editor For Unity Gallery Image 5.jpg"
+            draggable="false"
+          />
+          <img
+            class="gi"
+            src="Images/Gallery/Atlas Next Gen Terrain Editor For Unity Gallery Image 6.jpg"
+            draggable="false"
+          />
+        </div>
+        <div class="column">
+          <img
+            class="gi"
+            src="Images/Gallery/Atlas Next Gen Terrain Editor For Unity Gallery Image 7.jpg"
+            draggable="false"
+          />
+          <img
+            class="gi"
+            src="Images/Gallery/Atlas Next Gen Terrain Editor For Unity Gallery Image 8.jpg"
+            draggable="false"
+          />
+          <img
+            class="gi"
+            src="Images/Gallery/Atlas Next Gen Terrain Editor For Unity Gallery Image 9.jpg"
+            draggable="false"
+          />
+          <img
+            class="gi"
+            src="Images/Gallery/Atlas Next Gen Terrain Editor For Unity Gallery Image 10.jpg"
+            draggable="false"
+          />
+          <img
+            class="gi"
+            src="Images/Gallery/Atlas Next Gen Terrain Editor For Unity Gallery Image 11.jpg"
+            draggable="false"
+          />
+          <img
+            class="gi"
+            src="Images/Gallery/Atlas Next Gen Terrain Editor For Unity Gallery Image 12.jpg"
+            draggable="false"
+          />
+        </div>
+        <div class="column">
+          <img
+            class="gi"
+            src="Images/Gallery/Atlas Next Gen Terrain Editor For Unity Gallery Image 13.jpg"
+            draggable="false"
+          />
+          <img
+            class="gi"
+            src="Images/Gallery/Atlas Next Gen Terrain Editor For Unity Gallery Image 14.jpg"
+            draggable="false"
+          />
+          <img
+            class="gi"
+            src="Images/Gallery/Atlas Next Gen Terrain Editor For Unity Gallery Image 15.jpg"
+            draggable="false"
+          />
+          <img
+            class="gi"
+            src="Images/Gallery/Atlas Next Gen Terrain Editor For Unity Gallery Image 16.jpg"
+            draggable="false"
+          />
+          <img
+            class="gi"
+            src="Images/Gallery/Atlas Next Gen Terrain Editor For Unity Gallery Image 17.jpg"
+            draggable="false"
+          />
+          <img
+            class="gi"
+            src="Images/Gallery/Atlas Next Gen Terrain Editor For Unity Gallery Image 18.jpg"
+            draggable="false"
+          />
+        </div>
+        <div class="column">
+          <img
+            class="gi"
+            src="Images/Gallery/Atlas Next Gen Terrain Editor For Unity Gallery Image 19.jpg"
+            draggable="false"
+          />
+          <img
+            class="gi"
+            src="Images/Gallery/Atlas Next Gen Terrain Editor For Unity Gallery Image 20.jpg"
+            draggable="false"
+          />
+          <img
+            class="gi"
+            src="Images/Gallery/Atlas Next Gen Terrain Editor For Unity Gallery Image 21.jpg"
+            draggable="false"
+          />
+          <img
+            class="gi"
+            src="Images/Gallery/Atlas Next Gen Terrain Editor For Unity Gallery Image 22.jpg"
+            draggable="false"
+          />
+          <img
+            class="gi"
+            src="Images/Gallery/Atlas Next Gen Terrain Editor For Unity Gallery Image 23.jpg"
+            draggable="false"
+          />
+          <img
+            class="gi"
+            src="Images/Gallery/Atlas Next Gen Terrain Editor For Unity Gallery Image 24.jpg"
+            draggable="false"
+          />
+        </div>
+      </div>
+    </section>-->
+
+    <footer>
+      <h5 class="noselect nocookie">
+        <i class="fas fa-cookie-bite" style="margin-right: 10px"></i>we do not use cookies
+      </h5>
+      <p style="color: white; letter-spacing: 2px; text-transform: uppercase;">Athmos Sound 2024</p>
+      <div class="socials noselect">
+        <a
+          class="social fab fa-discord"
+          href="https://discord.gg/ansDwAGvcE"
+          target="_blank"
+        ></a>
+        <!--<a class="social fab fa-instagram" href="https://www.instagram.com/Atlas.terrain/" target="_blank"></a>
+        <a
+          class="social fab fa-facebook"
+          href="https://www.facebook.com/ATLAS-terrain-105303281958886"
+          target="_blank"
+        ></a>
+        <a
+          class="social fab fa-youtube"
+          href="https://www.youtube.com/channel/UCccq6S5rIrRgstdfYJX3HcQ"
+          target="_blank"
+        ></a>-->
+      </div>
+
+    </footer>
+
+    <div id="modal" class="modal noselect">
+      <img class="modal-content" id="modalImage" draggable="false" />
+      <span class="close">&times;</span>
+      <div id="modalCaption"></div>
+      <a class="modalbutton left" id="modalleft"><i class="fas fa-arrow-circle-left"></i></a>
+      <a class="modalbutton right" id="modalright"><i class="fas fa-arrow-circle-right"></i></a>
+    </div>
+
+    <i class="down fas fa-chevron-down"></i>
+    
+    <script type="text/javascript">
+      //pictures!!
+
+      const modal = document.getElementById('modal');
+
+      const modalImage = document.getElementById('modalImage');
+
+      const modalCaption = document.getElementById('modalCaption');
+
+      const galleryImages = document.getElementsByClassName('gi');
+
+      let currentIndex = -1;
+
+      for (let i = 0; i < galleryImages.length; i++) {
+        let galleryImage = galleryImages[i];
+
+        galleryImage.onclick = function (e) {
+          let index = -1;
+
+          for (let i = 0; i < galleryImages.length; i++) {
+            if (galleryImages[i] == e.target) {
+              index = i;
+
+              break;
+            }
+          }
+
+          currentIndex = index;
+
+          Render();
+        };
+      }
+
+      const buttonLeft = document.getElementById('modalleft');
+
+      buttonLeft.onclick = function () {
+        currentIndex--;
+
+        if (currentIndex < 0) {
+          currentIndex = galleryImages.length - 1;
+        }
+
+        Render();
+      };
+
+      const buttonRight = document.getElementById('modalright');
+
+      buttonRight.onclick = function () {
+        currentIndex++;
+
+        if (currentIndex >= galleryImages.length) {
+          currentIndex = 0;
+        }
+
+        Render();
+      };
+
+      const span = document.getElementsByClassName('close')[0];
+
+      span.onclick = function () {
+        modal.style.display = 'none';
+      };
+
+      function Render() {
+        if (currentIndex >= 0 && currentIndex < galleryImages.length && galleryImages[currentIndex] != null) {
+          modal.style.display = 'block';
+
+          modalImage.style.transitionDuration = '0s';
+          modalImage.style.opacity = 0;
+
+          modalImage.src = galleryImages[currentIndex].src;
+          modalCaption.innerHTML = galleryImages[currentIndex].alt;
+
+          setTimeout(() => {
+            modalImage.style.transitionDuration = '0.3s';
+            modalImage.style.opacity = 1;
+          }, 1);
+        } else {
+          modal.style.display = 'none';
+        }
+      }
+
+      window.onload = function () {
+        document.body.style.transitionDuration = '0s';
+        document.body.style.opacity = 0;
+
+        setTimeout(() => {
+          document.body.style.transitionDuration = '1s';
+          document.body.style.opacity = 1;
+
+          let title = document.getElementsByClassName('title')[0];
+
+          title.style.transitionDuration = '0s';
+          title.style.opacity = 0;
+          title.style.letterSpacing = '16px';
+
+          setTimeout(() => {
+            title.style.transitionDuration = '1s';
+            title.style.opacity = 1;
+            title.style.letterSpacing = null;
+          }, 100);
+        }, 1);
+      };
+
+      //from where?
+/*
+      let QueryString = window.location.search;
+      let urlParams = new URLSearchParams(QueryString);
+      let from = urlParams.get('from');
+
+      if (from) {
+        fetch('https://backend.atlasterrain.com/api/users/userfrom', {
+          body: JSON.stringify({ from }),
+          method: 'POST',
+          headers: new Headers({ 'content-type': 'application/json' }),
+        })
+          .then(() => {
+            const builtUrl = window.location.host;
+            window.location.replace(window.location.origin);
+          })
+          .catch(console.error);
+      }
+
+      //mail box yeee
+
+      const mail = document.getElementById('mail');
+      const submit = document.getElementById('submit');
+      const mailboxinput = document.getElementById('mailboxinput');
+      const mailboxerror = document.getElementById('mailboxerror');
+      const mailboxsucces = document.getElementById('mailboxsucces');
+      const errortext = document.getElementById('errortext');
+
+      submit.onclick = function () {
+        submit.style.pointerEvents = 'none';
+        submit.style.opacity = 0.25;
+
+        let mailstring = mail.value;
+
+        if (mail.checkValidity() == false) {
+          SumbitError('Hmmm this is not an email.');
+
+          return;
+        }
+
+        fetch('https://backend.atlasterrain.com/api/newsletter/subscribe', {
+          body: JSON.stringify({ email: mailstring }),
+          method: 'POST',
+          headers: new Headers({ 'content-type': 'application/json' }),
+        })
+          .then(async (res) => {
+            mailboxerror.style.display = 'none';
+
+            mailboxsucces.style.display = 'block';
+            if (res.status.toString()[0] !== '2') {
+              throw new Error(await res.text());
+            }
+            FadeIn(mailboxsucces);
+          })
+          .catch((err) => {
+            let errorMessage;
+            if (err instanceof Error) {
+              try {
+                const message = JSON.parse(err.message);
+                errorMessage = message.error[0] + '</i>';
+              } catch (_) {
+                errorMessage = 'Looks like we are in trouble, try again later.</i>';
+              }
+            } else {
+              errorMessage = 'Looks like we are in trouble, try again later.</i>';
+            }
+            SumbitError(errorMessage);
+          });
+      };
+
+      function SumbitError(error) {
+        mailboxerror.style.display = 'block';
+
+        errortext.innerHTML = error;
+
+        FadeIn(mailboxerror);
+
+        setTimeout(() => {
+          submit.style.pointerEvents = 'all';
+          submit.style.opacity = 1;
+          mailboxerror.style.opacity = 0.5;
+        }, 3000);
+      }*/
+
+      function FadeIn(el) {
+        el.style.transitionDuration = '0s';
+        el.style.opacity = 0;
+
+        setTimeout(() => {
+          el.style.transitionDuration = '1s';
+          el.style.opacity = 1;
+        }, 10);
+      }
+    </script>
+
+  </body>
+</html>
