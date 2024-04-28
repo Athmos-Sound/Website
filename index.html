@@ -560,7 +560,7 @@
 
       .assetstorebutton {
         position: absolute;
-        top: 66%;
+        top: 63%;
         left: 50%;
         transform: translateX(-50%);
         font-size: 20px;
@@ -591,26 +591,46 @@
 
       /*---*/
 
-      .mainparagraph {
+      .maintitle {
         position: absolute;
-        top: 66%;
+        top: 41%;
         left: 50%;
         transform: translateX(-50%);
-        font-size: 36px;
+        font-size: 45px;
         text-transform: uppercase;
         font-weight: lighter;
-        -background: white;
         border: none;
         border-radius: 5px;
         padding: 20px 40px;
         z-index: 5;
-        cursor: pointer;
-        color:white;
+        color: white;
       }
 
-      .mainparagraph:hover {
-        color:black;
-        filter:invert(1);
+      @media only screen and (max-width: 800px) {
+        
+        .maintitle {
+          top: 78%;
+          font-size: 14px;
+          padding: 15px 10px;
+        }
+
+      }
+
+      /*---*/
+
+      .mainparagraph {
+        position: absolute;
+        top: 47%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 18px;
+        text-transform: uppercase;
+        font-weight: lighter;
+        border: none;
+        border-radius: 5px;
+        padding: 20px 40px;
+        z-index: 5;
+        color: white;
       }
 
       @media only screen and (max-width: 800px) {
@@ -635,8 +655,7 @@
         background-image: url("Images/Athmos Ambient Sound Packs For Unity Sound Bar Animated.gif");
         border: none;
         padding: 20px 40px;
-        z-index: 5;
-        cursor: pointer;
+        z-index: 1;
       }
 
       @media only screen and (max-width: 800px) {
@@ -648,6 +667,63 @@
 
       }
 
+      /*---*/
+
+      .packscontainer {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        width: 100%;
+        padding: 50px;
+        border-radius: 15px;
+        grid-gap: 25px;
+      }
+
+      .pack {
+        height: 360px;
+        position: relative;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+
+      .packbutton {
+        position: absolute;
+        bottom: 10%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        padding: 10px 25px;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        text-transform: capitalize;
+        border: 3px solid white;
+      }
+      
+      .packbutton:hover {
+        color: white;
+        border: 3px solid darkgray;
+      }
+
+      /*---*/
+
+      .infolist {
+        list-style: hangul-consonant;
+        list-style-position: inside;
+        text-align: center;
+        padding-bottom: 50px
+      }
+
+      .listwrap {
+        list-style-type: square;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-gap: 75px;
+      }
+
+      audio {
+        max-width: 150px;
+      }
+
     </style>
     <script type="text/javascript" src="https://tiiny.host/ad-script.js"></script><script defer data-domain="magenta-jessie-50.tiiny.site" src="https://analytics.tiiny.site/js/plausible.js"></script></head>
 
@@ -655,222 +731,205 @@
   <body>
 
     <div class="mainnav">
-      <a class="navitem navhome" href="#section1"></i>Home</a>
-      <a class="navitem" href="#section1-2">Packs</a>
-      <a class="navitem" href="#section2">Features</a>
-      <a class="navitem" href="docs.html">Documentation</a>
-      <a class="navitem" href="#section3">Contact</a>
+      <a class="navitem navhome" href="#sectionmain"></i>Home</a>
+      <a class="navitem" href="#sectionpacks">Packs</a>
+      <a class="navitem" href="#sectionfeatures">Features</a>
+      <a class="navitem" href="#sectiontechniques">Techniques</a>
+      <a class="navitem" href="#sectioncontact">Contact</a>
     </div>
 
-    <section style="background-color: black; padding: 0;" id="section1">
+    <!---main-->
+    <section style="background-color: black; padding: 0;" id="sectionmain">
       <img src="Images/Athmos Abmient Sound Packs For Unity Thumbnail.png" style="width: 100%" draggable="false"></img>
-      <!--<h1 class="title noselect"><b>next gen terrain editor</b> for unity</h1>-->
-      <div class="mainparagraph noselect">Sound Design</div> 
-      <!--<a class="assetstorebutton noselect" href="https://assetstore.unity.com/packages/slug/207568">Unity Asset Store</a>-->
+      <div class="maintitle noselect">Athmos</div> 
+      <div class="mainparagraph noselect">Compose your Soundscape</div> 
+      <a class="assetstorebutton noselect" href="#sectionpacks">Packs</a>
       <a class="soundbar noselect" src="Images/Athmos Abmient Sound Packs For Unity Sound Bar Animated.gif"></a>
       <div class="fade"></div>
     </section>
 
-    <!---athmospheres-->
-    <section style="background-color: black;" id="section1-2">
+    <!---intro-->
+    <section style="background-color: black;" id="sectionintro">
       <div class="txtwrap">
-        <h1>Hear, hear, welcome to Athmos.</h1>
-        <p>The consept behind Athmos is to provide unity pecific athmospheric sound packages, striking a balance between quality and usability.</p>
-        <p>Each package evolves around a specific athmosphere containing modular sound pieces that flow togheter and allow you to compose rich athmospheric environments.</p>
+        <h1>Welcome to Athmos.</h1>
+        <p>Explore a new way to soundscape your environments with our ambient sound packs.</p> 
+        <p>Designed for games, available on the unity asset store. <i class="fa fa-hand-peace"></i></p>
       </div>
       <div class="imgwrap" style="position:relative; width: 100%; height: 0; padding-bottom: 56.25%;">
         <iframe style="position: absolute; top: 15px; left: 15px; width: calc( 100% - 30px); height: calc( 100% - 30px); border: none;" src=""></iframe>
       </div>
     </section>
 
-    <!---what?-->
-    <section id="section2">
+    <!---packs?-->
+    <section id="sectionpacks">
       <div class="txtwrap">
-        <h1>Athmospheres</h1>
-        <p>The consept behind Athmos is to provide unity pecific athmospheric sound packages, striking a balance between quality and usability.</p>
-        <p>Each package evolves around a specific athmosphere containing modular sound pieces that flow togheter and allow you to compose rich athmospheric environments.</p>
+        <h1>Packs</h1>
+        <p style="text-align: center;">Each package evolves around a specific athmosphere containing modular sound pieces that flow togheter<br>allowing you to compose your own soundscape.</i></p>
+        <div class="packscontainer">
+          <div class="pack" style="background-image: url('Images/1382.png');">
+            <a class="packbutton noselect" href="https://assetstore.unity.com/publishers/100218?preview=1" >Arcane</a>
+          </div>
+          <div class="pack" style="background-image: url('Images/1382.png');">
+            <a class="packbutton noselect" href="https://assetstore.unity.com/publishers/100218?preview=1" >Pandora</a>
+          </div>
+          <div class="pack" style="background-image: url('Images/1382.png');">
+            <a class="packbutton noselect" href="https://assetstore.unity.com/publishers/100218?preview=1" >Reactor</a>
+          </div>
       </div>
     </section>
 
-    <!---balancing quality and usability-->
-    <section style="background-color: black;">
+    <!---features-->
+    <section style="background-color: black;" id="sectionfeatures">
       <div class="txtwrap">
-      <h1>Balancing Quality & Usability</h1>
-      <p>The consept behind Athmos is to provide unity pecific athmospheric sound packages, striking a balance between quality and usability.</p>
-      <p>Each package evolves around a specific athmosphere containing modular sound pieces that flow togheter and allow you to compose rich athmospheric environments.</p>
-    </div>
-  </section>
-
-    <!---storytelling-->
-    <section>
-      <div class="txtwrap">
-        <h1>Storytelling</h1>
-        <p>The consept behind Athmos is to provide unity pecific athmospheric sound packages, striking a balance between quality and usability.</p>
-        <p>Each package evolves around a specific athmosphere containing modular sound pieces that flow togheter and allow you to compose rich athmospheric environments.</p>
+        <h1>Quality & Usability</h1>
+        <p>Our goal is to provide you with a sound package that strikes a fine balance between quality and usability.</p>
+        <p>Once we lock onto a specific athmosphere, our first step is to get the feeling right. We then proceed by boiling the athmosphere down to a set of modular sound pieces, focusing on usability.<p>
+        <p>Trough testing we determine if the package is good enough to release<br>keeping an eye on consistancy.</p>
       </div>
+      <div style="align-content: center; background-image: url('Images/Brewpot.png'); background-size: contain; background-repeat: no-repeat; width: 200px; height: 200px;"></div>
     </section>
-
-    <!---combine sounds-->
-    <!--<section style="background-color: black;">
-      <div class="txtwrap">
-        <h1>Blend Modes</h1>
-        <p>Roads should probably make the height go towards the spline at all times. The mountains on the other hand should most likely punch through the heightmap and craters should probably only lower the height of your terrain.</p>
-        <p>This logic is handled through blend modes and we have 5 modes to choose from.</p>
-        <ul>
-          <li>Blend: moves the height towards the target height</li>
-          <li>Max: the maximum height wins</li>
-          <li>Min: the minimum height wins</li>
-          <li>Add: adds height</li>
-          <li>Sub: subtracts height</li>
-        </ul>
-      </div>
-      <div class="imgwrap">
-        <img class="gi noselect" src="Images/Atlas Next Gen Terrain Editor For Unity Section 5.jpg" draggable="false" />
-      </div>
-    </section>-->
 
     <!---harmony-->
     <section>
       <div class="txtwrap">
-        <h1>Harmony</h1>
-        <p>The consept behind Athmos is to provide unity pecific athmospheric sound packages, striking a balance between quality and usability.</p>
-        <p>Each package evolves around a specific athmosphere containing modular sound pieces that flow togheter and allow you to compose rich athmospheric environments.</p>
-      </div>
-    </section>
-
-    <!--modulation-->
-    <section style="background-color: black;">
-      <div class="txtwrap">
-        <h1>Modulation</h1>
-        <p>The consept behind Athmos is to provide unity pecific athmospheric sound packages, striking a balance between quality and usability.</p>
-        <p>Each package evolves around a specific athmosphere containing modular sound pieces that flow togheter and allow you to compose rich athmospheric environments.</p>
-      </div>
-    </section>
-
-    <!--stamps as prefabs-->
-    <!--<section>
-      <div class="txtwrap">
-        <h1>Stamps as Prefabs</h1>
-        <p>Stamps in Atlas are regular GameObjects and as you would expect you can drag them to your project panel and turn them into a prefab.</p>
-        <p>This allows you to <b>structure</b> the way your level is built; you can group stamps, combine stamps with other prefabs like buildings or lakes and especially <b>reuse</b> the things you build throughout your project.</p>
-      </div>
-      <div class="imgwrap">
-        <img class="gi noselect" src="Images/Atlas Next Gen Terrain Editor For Unity Section 8.jpg" draggable="false" />
-      </div>
-    </section>-->
-
-    <!--splines-->
-    <!--<section style="background-color: black;">
-      <div class="txtwrap">
-        <h1>Splines</h1>
-        <p>Atlas would not be complete without spline support. The spline stamp offers the same functionality as regular stamps, the only difference is that the stamp will now be orientated as a spline instead of a square.</p>
-        <p>Consider using spline stamps to build road networks, rivers, ridges, coast lines, or cliffs. It's all possible and can be very powerful when used correctly.</p>
-      </div>
-      <div class="imgwrap">
-        <img class="gi noselect" src="Images/Atlas Next Gen Terrain Editor For Unity Section 9.jpg" draggable="false" />
-      </div>
-    </section>-->
-
-    <!--spline to mesh-->
-    <!--<section>
-      <div class="txtwrap">
-        <h1>Spline to Mesh</h1>
-        <p>Atlas can generate a mesh from your spline, use this to create your road meshes and/or river meshes.</p>
-        <p>The settings with which you export the mesh can be customized separately; for rivers, you may want your mesh to be a little wider than the stamp itself whereas roads might need a small height offset or other tiling values.</p>
-      </div>
-      <div class="imgwrap">
-        <img class="gi noselect" src="Images/Atlas Next Gen Terrain Editor For Unity Section 10.jpg" draggable="false" />
-      </div>
-    </section>-->
-
-    <!--apply to unity terrain-->
-    <!--<section style="background-color: black;">
-      <div class="txtwrap">
-        <h1>Apply to Unity Terrain</h1>
-        <p>Atlas applies straight onto Unity terrain, each terrain will render at full resolution. You can use as many terrains as you want and they don't need to share the same settings. Atlas will automatically render <b>seamlessly</b> when your terrain is placed side by side, there's no stitching required.</p>
-      </div>
-      <div class="imgwrap">
-        <img class="gi noselect" src="Images/Atlas Next Gen Terrain Editor For Unity Section 11.jpg" draggable="false" />
-      </div>
-    </section>-->
-
-    <!--export textures-->
-    <!--<section>
-      <div class="txtwrap">
-        <h1>Exporting textures</h1>
-        <p>To make Atlas ready for the future it provides you with extra textures you can export for more advanced terrain solutions.</p>
-        <ul>
-          <li>Heightmap (32bit)</li>
-          <li>16 splatmaps</li>
-          <li>global color map</li>
-          <li>global normal map</li>
+        <h1>Modular sound pieces</h1>
+        <ul class="listwrap">
+          <li>
+            <h3>Titles</h3>
+            <audio controls="controls">
+              <source src="Audio/drone.wav" type="audio/wav" />
+              Your browser does not support the audio element.
+            </audio>
+            <p>Play as introduction to your environment.</p>
+          </li>
+          <li>
+            <h3>Hits</h3>
+            <audio controls="controls">
+              <source src="Audio/drone.wav" type="audio/wav" />
+              Your browser does not support the audio element.
+            </audio>
+            <p>Play at impactfull moments.</p>
+          </li>
+          <li>
+            <h3>Risers</h3>
+            <audio controls="controls">
+              <source src="Audio/drone.wav" type="audio/wav" />
+              Your browser does not support the audio element.
+            </audio>
+            <p>Build tension before an impactfull moment.</p>
+          </li>
+          <li>
+            <h3>Whooshes</h3>
+            <audio controls="controls">
+              <source src="Audio/drone.wav" type="audio/wav" />
+              Your browser does not support the audio element.
+            </audio>
+            <p>Make transitions.</p>
+          </li>
+          <li>
+            <h3>Braaams</h3>
+            <audio controls="controls">
+              <source src="Audio/drone.wav" type="audio/wav" />
+              Your browser does not support the audio element.
+            </audio>
+            <p>Play at impactfull moments that aren’t sudden hits.</p>
+          </li>
+          <li>
+            <h3>Environment Drones</h3>
+            <audio controls="controls">
+              <source src="Audio/drone.wav" type="audio/wav" />
+              Your browser does not support the audio element.
+            </audio>
+            <p>These are environment specific like wind and rain, use to root with the environment.</p>
+          </li>
+          <li>
+            <h3>Bass Drops</h3>
+            <audio controls="controls">
+              <source src="Audio/drone.wav" type="audio/wav" />
+              Your browser does not support the audio element.
+            </audio>
+            <p>Create rithmic tension & progression.</p>
+          </li>
+          <li>
+            <h3>Tension</h3>
+            <audio controls="controls">
+              <source src="Audio/drone.wav" type="audio/wav" />
+              Your browser does not support the audio element.
+            </audio>
+            <p>Tension loops to keep the player in tension.</p>
+          </li>
+          <li>
+            <h3>Drones</h3>
+            <audio controls="controls">
+              <source src="Audio/drone.wav" type="audio/wav" />
+              Your browser does not support the audio element.
+            </audio>
+            <p>combine with Environment Drone to add feeling.</p>
+          </li>
         </ul>
-        <p>These should provide enough information to articulate pretty much any terrain that is heightmap based.</p>
-        <p>While global color map can give huge improvements of the uniqueness your terrain can also  express to a global normal map that will make your terrain look sharp and crisp from far away.</p>
-        <p>Atlas also provides up to 16 splatmaps if your terrain shader supports it.</p>
-      </div>
-      <div class="imgwrap">
-        <img class="gi noselect" src="Images/Atlas Next Gen Terrain Editor For Unity Section 12.jpg" draggable="false" />
-      </div>
-    </section>-->
-
-    <!--scattering-->
-    <!--<section style="background-color: black;">
-      <div class="txtwrap">
-        <h1>Scattering</h1>
-        <p>Atlas comes with basic scattering system in which each terrain contains a list of <b>scatter rules.</b></p>
-        <p>Each scatter rule can be a biome like palm trees on a beach or a dense pine forest and can be filtered using a target splatmap, range sliders for height and slope and an ignore tag.</p>
-        <p>Scattering is <b>'hierarchy'</b> based, which means you can first scatter a bunch of big trees, those big trees can then scatter smaller trees and so on, this works a bit more like nature in real life compared to just noise based scattering.</p>
-        <p>Details such as tiny rocks and billboard grass can also be scattered via a density value. All scattered objects can <b>cull</b> each other so you don't have overlaps.</p>
-        <p>Scattering is also <b>non invasive</b>, which means that you can manually place your special trees without the scattering system removing them whenever it scatters again.</p>
-      </div>
-      <div class="imgwrap">
-        <img class="gi noselect" src="Images/Atlas Next Gen Terrain Editor For Unity Section 13.jpg" draggable="false" />
-      </div>
-    </section>-->
-
-    <!---editor performance-->
-    <!--<section>
-      <div class="txtwrap">
-        <h1>Adaptive Performance</h1>
-        <p>Atlas renders using a fixed resolution, which means that regardless of the size of your terrain, your <b>performance will stay the same</b>.</p>
-        <p>The preview box is split in 2 parts, on one side you have your total preview area which shows your whole terrain at a lower resolution and on the other side you have a smaller square which renders at full resolution.</p>
-        <p>Drag the full resolution square around to get a glimpse of what the terrain will look like.</p>
-      </div>
-      <div class="imgwrap">
-        <img class="gi noselect" src="Images/Atlas Next Gen Terrain Editor For Unity Section 4.jpg" draggable="false" />
-      </div>
-    </section>-->
-
-    <!--quality-->
-    <section>
-      <div class="txtwrap">
-        <h1>Quality</h1>
-        <p>The consept behind Athmos is to provide unity pecific athmospheric sound packages, striking a balance between quality and usability.</p>
-        <p>Each package evolves around a specific athmosphere containing modular sound pieces that flow togheter and allow you to compose rich athmospheric environments.</p>
       </div>
     </section>
 
-    <!--usability-->
+    <!--composition-->
     <section style="background-color: black;">
       <div class="txtwrap">
-        <h1>Usability</h1>
-        <p>The consept behind Athmos is to provide unity pecific athmospheric sound packages, striking a balance between quality and usability.</p>
-        <p>Each package evolves around a specific athmosphere containing modular sound pieces that flow togheter and allow you to compose rich athmospheric environments.</p>
+        <h1>Composition</h1>
+        <p>Composing your soundscape can be difficult when working with generic audio libraries.</p>
+        <p>Athmos tries to leveliate this by making sure the sounds are coherent across the board.</p>
+        <p>Below you’l find some techniques that can be applied to raze your soundscape to the next level.</p>
       </div>
+      <div style="align-content: center; background-image: url('Images/Composition.png'); background-size: contain; background-repeat: no-repeat; width: 200px; height: 200px;"></div>
     </section>
 
-    <!--roadmap-->
+    <!--Techniques-->
     <section>
-      <div class="txtwrap">
-        <h1>Roadmap</h1>
-        <p>The consept behind Athmos is to provide unity pecific athmospheric sound packages, striking a balance between quality and usability.</p>
-        <p>Each package evolves around a specific athmosphere containing modular sound pieces that flow togheter and allow you to compose rich athmospheric environments.</p>
+      <div class="txtwrap" id="sectiontechniques">
+        <h1>Techniques</h1>
+        <ul>
+          <li class="infolist">
+            <h3>Titles</h3>
+            <p>Just like any chapter of a book is introduced by a title, we should do the same for our environment, use Titles provided in the package to introduce the player, this will align expectations and provide a clear starting point or transition to another environment. </p>
+          </li>
+          <li class="infolist">
+            <h3>Events</h3>
+            <p>Use Hits, Braaams or Bass Drops for impactfull events, if the event is sudden and quick a Hit or Bass drop can work, if the event is long lasting a Braaam could be a good option. </p>
+          </li>
+          <li class="infolist">
+            <h3>Intensity</h3>
+            <p>When the event can be predicted we can increase the impact by building intensity first, using a Riser.</p>
+          </li>
+          <li class="infolist">
+            <h3>Rithm</h3>
+            <p>Another way to increase the intensity is to build rithm, using Hits, or Bass drops, this can transition the player’s mood towards action and flow. </p>
+          </li>
+          <li class="infolist">
+            <h3>Combos</h3>
+            <p>Combine multiple Athmospheric loops togheter at different intensities to fine tune the feeling and intensity of your environment .</p>
+          </li>
+          <li class="infolist">
+            <h3>Layering</h3>
+            <p>Athmos provides modules, meant to be layered, layering can creatly increase the feeling and deph of your soundscapes.</p>
+          </li>
+          <li class="infolist">
+            <h3>Animation</h3>
+            <p>When combining loops it is possible to animate their intensity making the loop ever chaning or making the loop fit the level of intensity the player is experiencing.</p>
+          </li>
+          <li class="infolist">
+            <h3>Localization</h3>
+            <p>Environment drones are loops meant to tie the soundscape with the actual physical environment, use 3d sound for these, playing ocean near the beach, leaves ratteling near trees, wind on mountain tops.</p>
+          </li>
+          <li class="infolist">
+            <h3>Experimentation</h3>
+            <p>Don’t just take the things as they are.</p>
+            <p>Try out<br><b>reversing</b><br><b>pitching</b><br><b>reverb</b></p>
+            <p>These will greatly improve your posibilities and make sure your project stays unique.</p>
+          </li>
+        </ul>
       </div>
     </section>
 
-    <!--consult-->
-    <section style="background-color: #000000;filter: invert(1);">
+    <!--contact-->
+    <section style="background-color: #000000;filter: invert(1);" id ="sectioncontact">
      
       <!--<img class="noselect mwl" src="Images/Made with love.png" draggable="false" style="border: none;
       border: none;
@@ -878,20 +937,20 @@
       top: 50%;
       transform: translateY(-50%) scale(0.75) translateX(-200px);
       "/>-->
-      
       <h2 style="text-align: center; padding-bottom: 50px;">
         <i class="fas fa-thumbtack blinker" style="margin-right: 10px; display: inline-block"></i>
-        <b class="blinker" style="margin-right: 10px; display: inline-block; animation-delay: 0.1s">discussion</b>
-        <div class="blinker" style="margin-right: 10px; display: inline-block; animation-delay: 0.2s">on</div>
+        <b class="blinker" style="margin-right: 10px; display: inline-block; animation-delay: 0.1s">Discuss</b>
+        <div class="blinker" style="margin-right: 10px; display: inline-block; animation-delay: 0.2s">your project on</div>
         <a
           class="blinker"
           style="margin-right: 10px; display: inline-block; animation-delay: 0.3s"
           href="https://discord.gg/ansDwAGvcE"
           target="_blank"
-          >discord</a
+          >Discord</a
         >
       </h2>
-
+      <p style="text-align: center;">Join our discord, get support, answers, custom sounds, all is welcome.</p>
+      
       <!--<div class="mailboxwrap">
         <p style="text-align: center; margin-bottom: 30px">
           <i class="fas fa-envelope" style="margin-right: 15px; color: white"></i>Subscribe to our newsletter for updates and news!
